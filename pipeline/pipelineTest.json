@@ -1,0 +1,252 @@
+{
+	"name": "pipelineTest",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Survey ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Survey ID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Store Number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Store Number",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Store Location",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Store Location",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Store Setting",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Store Setting",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Age",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Age",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Exchange",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Exchange",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Survey Date ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Survey Date ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VideoGames",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VideoGames",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Academic Books",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Academic Books",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Toys",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Toys",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OutDoor SportKits",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OutDoor SportKits",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "InDoor SportKits",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "InDoor SportKits",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Gadgets",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Gadgets",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NonAcademic Books",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NonAcademic Books",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Number of Items Purchased",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Number of Items Purchased",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Amount of Purchases",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Total Amount of Purchases",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
